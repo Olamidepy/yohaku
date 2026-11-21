@@ -68,7 +68,7 @@ export const NAV = [
 export const PRINCIPLES = [
   { n: "01", title: "Less, on purpose.", body: "No roadmap of forty promises. No dashboard of flashing numbers. One token, one idea, nothing extra." },
   { n: "02", title: "Space is a feature.", body: "In a Japanese ink painting the empty paper is part of the picture. In a noisy market, quiet is the rarest thing you can hold." },
-  { n: "03", title: "Fixed forever.", body: "Supply, fees and liquidity are set at launch and locked in code. There is no owner, no admin key and nothing to change later." },
+  { n: "03", title: "Fixed forever.", body: "Supply and liquidity are set at launch and locked in code. There is no owner, no admin key and nothing to change later." },
   { n: "04", title: "Nothing hidden.", body: "No team allocation and no presale. The whole supply goes into the pool on day one, and every number on this page can be checked onchain." },
 ] as const;
 
@@ -81,15 +81,14 @@ export const STEPS = [
 export const FAQ = [
   { q: "What does Yohaku mean?", a: "余白 (yohaku) is Japanese for the blank margin: the white space on a page, in a painting or a garden that is left empty on purpose. It isn't missing anything. It is what lets everything else be seen." },
   { q: "What is the Yohaku token?", a: "A fixed-supply token on Ethereum, launched through Programmable. One billion tokens, all of them in the pool from the first block. It is a brand and a statement more than a product: quiet, minimal and permanent." },
-  { q: "What are the fees?", a: `Every buy and sell in the official pool pays ${TOTAL_FEE}% in ETH: ${TOKEN.creatorFee}% creator fee and ${TOKEN.platformFee}% to Programmable. The rates are fixed in the pool's hook and can never be raised or lowered.` },
   { q: "Is the liquidity locked?", a: "Yes, forever. The launch contract holds the pool position and has no function to remove or move it. Nobody can pull the liquidity, including us." },
-  { q: "How does launch protection work?", a: `For the first ${TOKEN.openingFeeSeconds} seconds the buy fee starts at ${TOKEN.openingFeePct}% and falls steadily to the normal ${TOTAL_FEE}%. For the first ${TOKEN.protectionSeconds / 60} minutes no wallet can buy or receive more than ${TOKEN.walletCapPct}% of the supply. It stops bots and snipers from taking the launch.` },
+  { q: "How does launch protection work?", a: `For the first ${TOKEN.openingFeeSeconds} seconds the buy fee starts at ${TOKEN.openingFeePct}% and falls steadily to the normal rate. For the first ${TOKEN.protectionSeconds / 60} minutes no wallet can buy or receive more than ${TOKEN.walletCapPct}% of the supply. It stops bots and snipers from taking the launch.` },
   { q: "Where is the official contract?", a: "On this site and on our official X account, posted at launch. Never trust an address sent to you in a DM or posted anywhere else." },
 ] as const;
 
 export const FACTS = [
   { value: "1B", label: "Total supply", note: "Fixed. No mint function." },
-  { value: `${TOTAL_FEE}%`, label: "Trade fee", note: `${TOKEN.creatorFee}% creator · ${TOKEN.platformFee}% Programmable` },
+  { value: "1", label: "Pool", note: "One official pool on Ethereum." },
   { value: "0", label: "Team allocation", note: "All supply in the pool at launch." },
   { value: "∞", label: "Liquidity lock", note: "No owner. No way to remove it." },
 ] as const;

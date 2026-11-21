@@ -5,7 +5,7 @@ import { PixelBlob, PixelMosaic } from "@/components/site/pixel-blob";
 import { Reveal } from "@/components/site/reveal";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
-import { FACTS, FAQ, PRINCIPLES, SITE, STEPS, TOKEN, TOTAL_FEE } from "@/lib/data";
+import { FACTS, FAQ, PRINCIPLES, SITE, STEPS, TOKEN } from "@/lib/data";
 
 const Band = () => <div className="band" aria-hidden="true" />;
 
@@ -173,35 +173,15 @@ export default function Home() {
             ))}
           </div>
 
-          <Reveal className="mt-16 grid border border-black md:grid-cols-2">
-            <div className="p-6 sm:p-10">
-              <p className="label">
-                <span className="bg-black px-1.5 py-0.5 text-white">Every trade · {TOTAL_FEE}% in ETH</span>
-              </p>
-              <div className="mt-8 flex h-6 border border-black">
-                <div className="bg-black" style={{ width: `${(TOKEN.creatorFee / TOTAL_FEE) * 100}%` }} />
-                <div className="bg-[repeating-linear-gradient(90deg,#000_0_2px,#fff_2px_5px)]" style={{ width: `${(TOKEN.platformFee / TOTAL_FEE) * 100}%` }} />
-              </div>
-              <dl className="mt-8 grid grid-cols-2 gap-6">
-                <div>
-                  <dt className="text-sm text-muted-foreground">Creator fee</dt>
-                  <dd className="mt-1 font-pixel text-5xl font-bold">{TOKEN.creatorFee}%</dd>
-                </div>
-                <div>
-                  <dt className="text-sm text-muted-foreground">{SITE.launchpad}</dt>
-                  <dd className="mt-1 font-pixel text-5xl font-bold">{TOKEN.platformFee}%</dd>
-                </div>
-              </dl>
-              <p className="mt-6 text-sm text-muted-foreground">On every buy and sell in the official pool. Fixed in the pool&apos;s hook: it can never be raised or lowered.</p>
-            </div>
-            <div className="border-t border-black bg-black p-6 text-white sm:p-10 md:border-t-0">
+          <Reveal className="mt-16 grid border border-black">
+            <div className="bg-black p-6 text-white sm:p-10">
               <p className="label">
                 <span className="bg-white px-1.5 py-0.5 text-black">Launch protection</span>
               </p>
-              <ul className="mt-8 grid gap-6">
+              <ul className="mt-8 grid gap-6 md:grid-cols-3">
                 <li>
                   <p className="font-pixel text-2xl font-bold">0–{TOKEN.openingFeeSeconds}s</p>
-                  <p className="mt-1 text-white/70">Buy fee starts at {TOKEN.openingFeePct}% and falls steadily to {TOTAL_FEE}%. Snipers pay for speed.</p>
+                  <p className="mt-1 text-white/70">Buy fee starts at {TOKEN.openingFeePct}% and falls steadily to normal. Snipers pay for speed.</p>
                 </li>
                 <li>
                   <p className="font-pixel text-2xl font-bold">0–{TOKEN.protectionSeconds / 60}min</p>

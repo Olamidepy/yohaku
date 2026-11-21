@@ -123,12 +123,8 @@ export function Swap() {
             </div>
           ) : null}
           <div className="flex justify-between">
-            <dt className="text-muted-foreground">Platform fee</dt>
-            <dd className="num">{TOKEN.platformFee}%</dd>
-          </div>
-          <div className="flex justify-between">
-            <dt className="text-muted-foreground">Creator fee</dt>
-            <dd className="num">{TOKEN.creatorFee}%</dd>
+            <dt className="text-muted-foreground">Trade fee</dt>
+            <dd className="num">{normalFee}%</dd>
           </div>
           <Separator className="my-1" />
           <div className="flex justify-between">
