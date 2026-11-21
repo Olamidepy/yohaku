@@ -15,9 +15,9 @@ export const SITE = {
   tagline: "The space left on purpose.",
   description:
     "Yohaku (余白) is the Japanese idea of white space: the part of a page left empty on purpose, so everything else can breathe. A quiet token on Ethereum, launched on Programmable.",
-  url: env(process.env.NEXT_PUBLIC_APP_URL) ?? "https://yohaku.vercel.app",
-  x: env(process.env.NEXT_PUBLIC_X_URL),
-  xHandle: env(process.env.NEXT_PUBLIC_X_HANDLE),
+  url: env(process.env.NEXT_PUBLIC_APP_URL) ?? "https://www.yohamarket.xyz",
+  x: env(process.env.NEXT_PUBLIC_X_URL) ?? "https://x.com/yoha_market",
+  xHandle: env(process.env.NEXT_PUBLIC_X_HANDLE) ?? "@yoha_market",
   chain: "Ethereum",
   launchpad: "Programmable",
   launchpadUrl: "https://programmable.market",
