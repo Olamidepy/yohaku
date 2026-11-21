@@ -5,7 +5,6 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu } from "lucide-react";
 
-import { AnnouncementBar } from "@/components/site/announcement-bar";
 import { ConnectWallet } from "@/components/site/connect-wallet";
 import { Wordmark } from "@/components/site/logo";
 import { XIcon } from "@/components/site/x-icon";
@@ -29,7 +28,6 @@ export function Nav() {
 
   return (
     <div className="pointer-events-none fixed inset-x-0 top-0 z-50">
-      <AnnouncementBar />
       <div className="px-3 pt-3 sm:px-4 sm:pt-4">
       <nav
         aria-label="Main"
