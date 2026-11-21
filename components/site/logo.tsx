@@ -1,20 +1,21 @@
 import { cn } from "@/lib/utils";
 
-/** The Yohaku mark: an empty frame with one red dot. The space left on purpose. */
+/** The Yohaku mark (the dotted sphere). Takes the current text colour, so it works on white and on black. */
 export function LogoMark({ className }: { className?: string }) {
   return (
-    <svg viewBox="0 0 32 32" aria-hidden="true" className={cn("size-6", className)}>
-      <rect x="2" y="2" width="28" height="28" rx="7" fill="none" stroke="currentColor" strokeWidth="2.4" />
-      <circle cx="22.5" cy="9.5" r="3" fill="#e0201b" />
-    </svg>
+    <span
+      aria-hidden="true"
+      className={cn("inline-block size-6 shrink-0 bg-current", className)}
+      style={{ maskImage: "url(/mark.png)", WebkitMaskImage: "url(/mark.png)", maskSize: "contain", WebkitMaskSize: "contain", maskRepeat: "no-repeat", WebkitMaskRepeat: "no-repeat", maskPosition: "center", WebkitMaskPosition: "center" }}
+    />
   );
 }
 
-/** Mark + dot-matrix name. */
+/** Mark + pixel name. */
 export function Wordmark({ className }: { className?: string }) {
   return (
     <span className={cn("inline-flex items-center gap-2 text-foreground", className)}>
-      <LogoMark className="size-[1.15em]" />
+      <LogoMark className="size-[1.35em]" />
       <span className="font-pixel font-bold tracking-[0.04em] leading-none">YOHAKU</span>
     </span>
   );

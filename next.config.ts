@@ -6,7 +6,7 @@ const nextConfig: NextConfig = {
   async headers() {
     return [
       {
-        source: "/:file(token.png|avatar.png)",
+        source: "/:file(token.png|avatar.png|mark.png)",
         headers: [
           { key: "Access-Control-Allow-Origin", value: "*" },
           { key: "Cache-Control", value: "public, max-age=31536000, immutable" },
