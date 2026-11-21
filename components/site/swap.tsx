@@ -30,7 +30,7 @@ function TokenPill({ eth }: { eth: boolean }) {
       {eth ? (
         <EthDot />
       ) : (
-        <span className="grid size-6 place-items-center rounded-full bg-background">
+        <span className="grid size-6 place-items-center rounded-full bg-black text-white" aria-hidden="true">
           <LogoMark className="size-4" />
         </span>
       )}
