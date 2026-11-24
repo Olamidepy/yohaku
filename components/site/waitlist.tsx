@@ -178,7 +178,9 @@ export function Waitlist() {
                             />
                             <p className={cn("mt-2 text-sm", reply && !replyOk ? "text-red" : "text-muted-foreground")}>
                               {reply && !replyOk
-                                ? `That link must be your own reply, posted from @${h || "your account"}.`
+                                ? !handleOk
+                                  ? "Type your X username in step 1 first. The reply must come from that account."
+                                  : `That link must be a reply posted from @${h}. Check the username in step 1.`
                                 : "On X, tap Share on your reply, then Copy link."}
                             </p>
                           </div>
