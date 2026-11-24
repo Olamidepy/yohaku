@@ -12,10 +12,10 @@ export async function GET(req: NextRequest) {
   if (!key || key.length < 16 || given !== key) return new NextResponse("Not found", { status: 404 });
   if (!redisReady) return new NextResponse("Redis is not configured", { status: 503 });
 
-  const handles = await redis<string[]>("LRANGE", "wl:list", 0, -1);
+  const handles = await redis<string[]>("LRANGE", "yoha:wl:list", 0, -1);
   const rows: string[][] = [];
   for (let i = 0; i < handles.length; i += 200) {
-    const batch = await redisPipeline(handles.slice(i, i + 200).map((h) => ["HGETALL", `wl:h:${h}`]));
+    const batch = await redisPipeline(handles.slice(i, i + 200).map((h) => ["HGETALL", `yoha:wl:h:${h}`]));
     for (const flat of batch) {
       const e = toObject(flat as string[]);
       const invites = Number(e.invites || 0);
