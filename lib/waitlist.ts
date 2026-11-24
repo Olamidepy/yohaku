@@ -5,7 +5,7 @@ import { SITE } from "@/lib/data";
 const env = (v: string | undefined) => (v && v.trim() ? v.trim() : undefined);
 
 /** The pinned post people like, repost and reply to. */
-export const PINNED_POST_URL = env(process.env.NEXT_PUBLIC_PINNED_POST_URL) ?? "";
+export const PINNED_POST_URL = env(process.env.NEXT_PUBLIC_PINNED_POST_URL) ?? "https://x.com/yoha_market/status/2124485408369389880";
 export const PINNED_POST_ID = PINNED_POST_URL.match(/status\/(\d+)/)?.[1] ?? "";
 
 export const X_HANDLE = SITE.xHandle.replace(/^@/, "");
