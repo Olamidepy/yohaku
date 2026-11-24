@@ -62,6 +62,7 @@ export const NAV = [
   { href: "/#token", label: "Token" },
   { href: "/#faq", label: "FAQ" },
   { href: "/trade", label: "Trade" },
+  { href: "/waitlist", label: "Waitlist" },
 ] as const;
 
 /** The manifesto. Short lines, lots of air. */
