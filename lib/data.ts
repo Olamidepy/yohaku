@@ -24,15 +24,14 @@ export const SITE = {
 } as const;
 
 /**
- * The token comes from the Programmable launch. Addresses stay empty until the launch is final,
- * so the site never shows an address that could be copied by scammers before then.
+ * The live Yohaku launch on Programmable (launch a2f02324…). Env vars can still override these.
  */
-const tokenAddress = addr(process.env.NEXT_PUBLIC_YOHAKU_TOKEN_ADDRESS);
-const ticker = env(process.env.NEXT_PUBLIC_TOKEN_TICKER);
+const tokenAddress = addr(process.env.NEXT_PUBLIC_YOHAKU_TOKEN_ADDRESS ?? "0xabDAaB65D5B93CD3092D4EF92E090C41c691A4cE");
+const ticker = env(process.env.NEXT_PUBLIC_TOKEN_TICKER) ?? "YOHA";
 
 export const TOKEN = {
   address: tokenAddress,
-  hook: addr(process.env.NEXT_PUBLIC_YOHAKU_HOOK_ADDRESS),
+  hook: addr(process.env.NEXT_PUBLIC_YOHAKU_HOOK_ADDRESS ?? "0xc5fef0555d70d77edadcE2a7B2b1cF87863f60Cc"),
   symbol: ticker ? `$${ticker.replace(/^\$/, "")}` : "Yohaku",
   unit: ticker ? ticker.replace(/^\$/, "") : "tokens",
   supply: Number(process.env.NEXT_PUBLIC_TOKEN_SUPPLY || 1_000_000_000),
